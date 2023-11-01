@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Vector;
 
 import javax.xml.transform.Source;
 
@@ -15,10 +16,21 @@ class Node<T> {
 class Solution {
   public static List<String> linkedListValues(Node<String> head) {
     // todo
-    return;
+    
+    List<String> nodes = new Vector<String>();
+    
+    while (head != null) {
+      //System.out.println(head.val);
+      nodes.add(head.val);
+      head = head.next;
   }
 
-  public static void main() {
+
+
+    return nodes;
+  }
+
+  public static void main(String[] args) {
     Node<String> a = new Node<>("a");
     Node<String> b = new Node<>("b");
     Node<String> c = new Node<>("c");
@@ -29,7 +41,7 @@ class Solution {
 
     // a -> b -> c -> d
 
-    Solution.linkedListValues(a); 
+    System.out.println(Solution.linkedListValues(a)); 
     // -> [ "a", "b", "c", "d" ]
   }
 }
